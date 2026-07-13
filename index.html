@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME TO HHKTECH STORE | Hasith Himansa</title>
+    <style>
+        /* CSS RESET & VARIABLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: #080c10;
+            color: #c9d1d9;
+            text-align: center;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 🎬 ANIMATIONS DEFINITIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 5px rgba(255, 69, 0, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(255, 69, 0, 0.6); }
+            100% { box-shadow: 0 0 5px rgba(255, 69, 0, 0.2); }
+        }
+
+        /* RESPONSIVE NAVBAR */
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #0d1117;
+            padding: 15px 20px;
+            border-bottom: 1px solid #21262d;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            gap: 15px;
+        }
+        .nav-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        .nav-title:hover { color: #ff4500; }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-links a {
+            color: #c9d1d9;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .nav-links a:hover { 
+            color: #ff4500; 
+            background-color: rgba(255, 69, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        #google_translate_element { margin-top: 5px; }
+
+        /* RESPONSIVE HEADER */
+        header {
+            background: linear-gradient(135deg, #0d1117, #ff4500);
+            padding: 60px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        header h1 { 
+            font-size: 2.2rem; 
+            color: #ffffff; 
+            font-weight: 800; 
+            text-transform: uppercase;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        header p { 
+            margin-top: 10px; 
+            font-size: 1.1rem; 
+            color: #dddddd; 
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* CONTAINER & SMOOTH SCROLL MARGIN */
+        .container { 
+            width: 100%;
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 15px; 
+        }
+        
+        .section {
+            background-color: #0d1117;
+            border: 1px solid #21262d;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-align: left;
+            animation: fadeInUp 1s ease-out backwards;
+            /* Navbar එකට කැපෙන්නේ නැතුව ලස්සනට ස්ක්‍රෝල් වෙන්න */
+            scroll-margin-top: 140px; 
+        }
+        
+        #home-section { animation-delay: 0.2s; }
+        #software-section { animation-delay: 0.4s; }
+        #buy-section { animation-delay: 0.6s; }
+
+        .section h2 { 
+            color: #ff4500; 
+            font-size: 1.6rem;
+            margin-bottom: 15px; 
+            border-bottom: 2px solid #21262d; 
+            padding-bottom: 10px; 
+        }
+
+        /* FOUNDER IMAGE AND TEXT LAYOUT */
+        .founder-box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .founder-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #ff4500;
+            object-fit: cover;
+            background-color: #21262d;
+            transition: all 0.5s ease;
+            animation: pulseGlow 3s infinite;
+        }
+        .founder-img:hover { transform: scale(1.1) rotate(5deg); }
+        .founder-text { flex: 1; }
+        
+        /* TABS SYSTEM */
+        .tab-container { 
+            display: flex; 
+            margin: 25px 0; 
+            background-color: #0d1117; 
+            border-radius: 8px; 
+            padding: 5px; 
+            border: 1px solid #21262d; 
+        }
+        .tab-btn { 
+            flex: 1; 
+            padding: 12px 5px; 
+            background: none; 
+            border: none; 
+            color: #8b949e; 
+            font-size: 1rem; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            border-radius: 6px; 
+        }
+        .tab-btn:hover { color: #ffffff; background-color: rgba(255, 255, 255, 0.05); }
+        .tab-btn.active { 
+            background-color: #ff4500; 
+            color: white; 
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4); 
+        }
+        
+        .tab-content { 
+            display: none; 
+            animation: fadeInUp 0.5s ease-out;
+        }
+        .tab-content.active { display: block; }
+
+        /* PACK CARDS ROW */
+        .pack-card {
+            padding: 25px 15px; 
+            border-bottom: 1px solid #21262d;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        .pack-card:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+            transform: scale(1.01);
+            padding-left: 20px;
+        }
+        .pack-card:last-child { border-bottom: none; }
+        .pack-card h3 { font-size: 1.3rem; margin-bottom: 8px; color: #ffffff; }
+        .pack-card p { font-size: 0.95rem; color: #8b949e; margin-bottom: 15px; }
+        .price-tag { font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; display: inline-block; }
+
+        /* RESPONSIVE BUTTONS */
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #238636;
+            color: white;
+            padding: 14px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .btn:hover { 
+            background-color: #2ea043; 
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(46, 160, 67, 0.4);
+        }
+        
+        .btn-pro { background-color: #ff4500; }
+        .btn-pro:hover { background-color: #ff6347; box-shadow: 0 6px 15px rgba(255, 69, 0, 0.4); }
+        .btn-free { background-color: #0066cc; }
+        .btn-free:hover { background-color: #0077ee; box-shadow: 0 6px 15px rgba(0, 102, 204, 0.4); }
+        .btn-whatsapp { background-color: #25D366; }
+        .btn-whatsapp:hover { background-color: #2cd76b; box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4); }
+
+        footer { margin-top: 50px; padding: 25px 15px; background-color: #0d1117; font-size: 0.85rem; color: #8b949e; border-top: 1px solid #21262d; }
+
+        /* TABLET & PC MEDIA QUERIES */
+        @media (min-width: 768px) {
+            .navbar { flex-direction: row; justify-content: space-between; padding: 15px 50px; }
+            .nav-title { font-size: 1.8rem; }
+            .section { scroll-margin-top: 90px; } /* PC එකට ගැළපෙන ස්ක්‍රෝල් මාජින් එක */
+            header { padding: 80px 20px; }
+            header h1 { font-size: 3.2rem; }
+            header p { font-size: 1.3rem; }
+            .section { padding: 40px; }
+            .founder-box { flex-direction: row; text-align: left; }
+            .founder-img { width: 140px; height: 140px; }
+            .btn { display: inline-block; width: auto; padding: 12px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="nav-logo-container">
+        <img src="logo.png" style="width: 35px; height: 35px; border-radius: 5px; object-fit: cover:">
+        <span class="nav-title">HHKTECH STORE</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home-section">Home</a>
+            <a href="#software-section">Software</a>
+            <a href="#buy-section">Contact Us</a>
+            <div id="google_translate_element"></div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <h1>WELCOME TO HHKTECH STORE</h1>
+        <p>ඔයාගේ පරිගණකය කැපී පෙනෙන ලෙස වේගවත් කරගන්න සුපිරිම ඇප්ස් එකතුව!</p>
+    </header>
+
+    <div class="container">
+
+        <!-- HOME SECTION -->
+        <div id="home-section" class="section">
+            <h2>HHKTECH ගැන (About Our Founder & Vision)</h2>
+            <div class="founder-box">
+                <img src="mine.png" class="founder-img">
+                <div class="founder-text">
+                    <p>සාදරයෙන් පිළිගන්නවා HHKTECH නිල වෙබ් අඩවියට! HHKTECH හි නිර්මාතෘ සහ ප්‍රධාන මෘදුකාංග සංවර්ධකයා වන්නේ හසිත් හිමංස (Hasith Himansa) ය.</p>
+                    <p style="margin-top: 10px;">අපගේ එකම අරමුණ වන්නේ කිසිදු අමතර බරක් හෝ අනවශ්‍ය වියදමකින් තොරව, පවතින Hardware වලින් උපරිම කාර්යක්ෂමතාවයක් (Maximum Bottleneck Unlocking) ලබාගත හැකි පරිදි සකසන ලද Windows සහ Mobile Optimization මෙවලම් ශ්‍රී ලාංකීය පරිශීලකයන් වෙත ලබාදීමයි.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SOFTWARE SECTION -->
+        <div id="software-section" class="section">
+            <h2>මෘදුකාංග එකතුව (Software Store)</h2>
+            <p style="color: #8b949e; margin-bottom: 10px;">පහතින් PC හෝ Mobile තෝරා, ඔයාට අවශ්‍ය Version එක බලන්න.</p>
+            
+            <div class="tab-container">
+                <button class="tab-btn active" onclick="openTab(event, 'pc-tab')">PC PACKS</button>
+                <button class="tab-btn" onclick="openTab(event, 'mobile-tab')">MOBILE PACKS</button>
+            </div>
+
+            <!-- PC TAB -->
+            <div id="pc-tab" class="tab-content active">
+                <div class="pack-card">
+                    <h3>1. BASIC PACK (මූලික සංස්කරණය - v1.0)</h3>
+                    <span class="price-tag" style="color: #2ea043;">මිල: 100%ක් නොමිලේ! (FREE)</span>
+                    <p>Temporary සහ Prefetch ෆයිල්ස් ක්ලීන් කර Storage එක නිදහස් කරන මූලික නිල පැකේජය.</p>
+                    <a href="basic.html" class="btn btn-free" target="_blank">View & Download Basic Pack</a>
+                </div>
+
+                <div class="pack-card">
+                    <h3>2. NORMAL SERIES (v1.1 - v1.5)</h3>
+                    <span class="price-tag" style="color: #58a6ff;">මිල: පැකේජය ඇතුළත වෙන වෙනම දක්වා ඇත</span>
+                    <p>Update Cache Clean, Font & Icon Fix, Crash Dump Purge සහ System Memory Clean මෙහි අඩංගු වේ.</p>
+                    <a href="normal.html" class="btn" target="_blank">View & Buy Normal Series</a>
+                </div>
+
+                <div class="pack-card">
+                    <h3>3. ULTIMATE PRO SERIES (v1.0 - v1.5)</h3>
+                    <span class="price-tag" style="color: #ff4500;">මිල: පැකේජය ඇතුළත වෙන වෙනම දක්වා ඇත</span>
+                    <p>Explorer Boost, Ultimate Power Plan, GPU Shader Cache Clean සහ Deep Registry Tweaks අඩංගු ප්‍රබලම Series එක!</p>
+                    <a href="pro.html" class="btn btn-pro" target="_blank">View & Buy Pro Series</a>
+                </div>
+            </div>
+
+            <!-- MOBILE TAB -->
+            <div id="mobile-tab" class="tab-content">
+                <p style="padding: 20px 0; text-align: center;">Mobile Packs සහ Gaming Guides ලබාගැනීමට කරුණාකර අපගේ WhatsApp අංකය අමතන්න.</p>
+            </div>
+        </div>
+
+        <!-- DOWNLOAD & HELP SECTION -->
+        <div id="buy-section" class="section">
+            <h2>බාගත කිරීම් සහ සහාය (Download and Help via WhatsApp)</h2>
+            <p style="margin-bottom: 15px;">ඔයාට අවශ්‍ය Paid පැකේජය සඳහා මුදල් <strong style="color: #ff4500;">077 627 3132</strong> අංකයට eZ Cash කිරීමෙන් පසු ලැබෙන රිසිට්පත පහත බටන් එක හරහා අප වෙත WhatsApp කරන්න.</p>
+            <a href="https://wa.me/94782865641" class="btn btn-whatsapp" style="display:block; text-align:center;" target="_blank">WhatsApp: 078 286 5641</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 HHKTECH Store. Created by Hasith Himansa. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'si', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

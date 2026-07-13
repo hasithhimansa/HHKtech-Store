@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASIC PACK | HHKTECH STORE</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #080c10;
+            color: #c9d1d9;
+            text-align: center;
+            padding: 40px 15px;
+            line-height: 1.6;
+        }
+
+        @keyframes subFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #0d1117;
+            border: 1px solid #21262d;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            text-align: left;
+            animation: subFadeIn 0.8s ease-out;
+        }
+
+        h1 { color: #2ea043; margin-bottom: 10px; font-size: 1.8rem; }
+        .version { color: #8b949e; font-size: 0.9rem; margin-bottom: 20px; }
+        
+        .features-list { margin: 20px 0; padding-left: 20px; }
+        .features-list li { margin-bottom: 10px; }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #238636;
+            color: white;
+            padding: 14px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 25px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn:hover {
+            background-color: #2ea043;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(46, 160, 67, 0.4);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #8b949e;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .back-link:hover { color: #ffffff; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>BASIC PACK (v1.0)</h1>
+        <div class="version">HHKTECH Official Free Edition</div>
+        
+        <p>මෙය පරිගණකයේ මූලික වේගවත් කිරීම් සඳහා නිපදවා ඇති සම්පූර්ණයෙන්ම නොමිලේ ලැබෙන පැකේජයකි.</p>
+        
+        <ul class="features-list">
+            <li>Temporary සහ Prefetch ෆයිල්ස් ඉවත් කර Storage එක නිදහස් කිරීම.</li>
+            <li>DNS Cache එක Flush කර ඉන්ටර්නෙට් Ping අගය ස්ථාවර කිරීම.</li>
+            <li>System Junk Files ලස්සනට Clean කර දීම.</li>
+        </ul>
+
+        <!-- ඔයාගේ Real Download Link එක href="කෝඩ් එකට" දාන්න මචං -->
+        <a href="YOUR_DOWNLOAD_LINK_HERE" class="btn">Download Basic Pack (FREE)</a>
+        <center><a href="index.html" class="back-link">Back to Store</a></center>
+    </div>
+
+</body>
+</html>
