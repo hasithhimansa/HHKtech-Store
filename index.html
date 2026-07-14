@@ -129,7 +129,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             text-align: left;
             animation: fadeInUp 1s ease-out backwards;
-            /* Navbar එකට කැපෙන්නේ නැතුව ලස්සනට ස්ක්‍රෝල් වෙන්න */
             scroll-margin-top: 140px; 
         }
         
@@ -252,7 +251,7 @@
         @media (min-width: 768px) {
             .navbar { flex-direction: row; justify-content: space-between; padding: 15px 50px; }
             .nav-title { font-size: 1.8rem; }
-            .section { scroll-margin-top: 90px; } /* PC එකට ගැළපෙන ස්ක්‍රෝල් මාජින් එක */
+            .section { scroll-margin-top: 90px; } 
             header { padding: 80px 20px; }
             header h1 { font-size: 3.2rem; }
             header p { font-size: 1.3rem; }
@@ -265,10 +264,9 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <div class="navbar">
         <div class="nav-logo-container">
-        <img src="logo.png" style="width: 35px; height: 35px; border-radius: 5px; object-fit: cover:">
+        <img src="logo.png" style="width: 35px; height: 35px; border-radius: 5px; object-fit: cover;">
         <span class="nav-title">HHKTECH STORE</span>
         </div>
         <div class="nav-links">
@@ -279,7 +277,6 @@
         </div>
     </div>
 
-    <!-- HEADER -->
     <header>
         <h1>WELCOME TO HHKTECH STORE</h1>
         <p>ඔයාගේ පරිගණකය කැපී පෙනෙන ලෙස වේගවත් කරගන්න සුපිරිම ඇප්ස් එකතුව!</p>
@@ -287,7 +284,6 @@
 
     <div class="container">
 
-        <!-- HOME SECTION -->
         <div id="home-section" class="section">
             <h2>HHKTECH ගැන (About Our Founder & Vision)</h2>
             <div class="founder-box">
@@ -299,7 +295,6 @@
             </div>
         </div>
 
-        <!-- SOFTWARE SECTION -->
         <div id="software-section" class="section">
             <h2>මෘදුකාංග එකතුව (Software Store)</h2>
             <p style="color: #8b949e; margin-bottom: 10px;">පහතින් PC හෝ Mobile තෝරා, ඔයාට අවශ්‍ය Version එක බලන්න.</p>
@@ -309,7 +304,6 @@
                 <button class="tab-btn" onclick="openTab(event, 'mobile-tab')">MOBILE PACKS</button>
             </div>
 
-            <!-- PC TAB -->
             <div id="pc-tab" class="tab-content active">
                 <div class="pack-card">
                     <h3>1. BASIC PACK (මූලික සංස්කරණය - v1.0)</h3>
@@ -320,26 +314,43 @@
 
                 <div class="pack-card">
                     <h3>2. NORMAL SERIES (v1.1 - v1.5)</h3>
-                    <span class="price-tag" style="color: #58a6ff;">මිල: පැකේජය ඇතුළත වෙන වෙනම දක්වා ඇත</span>
+                    <span class="price-tag" style="color: #58a6ff;">මිල: LKR 350/= සිට LKR 550/= දක්වා</span>
                     <p>Update Cache Clean, Font & Icon Fix, Crash Dump Purge සහ System Memory Clean මෙහි අඩංගු වේ.</p>
                     <a href="normal.html" class="btn" target="_blank">View & Buy Normal Series</a>
                 </div>
 
                 <div class="pack-card">
                     <h3>3. ULTIMATE PRO SERIES (v1.0 - v1.5)</h3>
-                    <span class="price-tag" style="color: #ff4500;">මිල: පැකේජය ඇතුළත වෙන වෙනම දක්වා ඇත</span>
-                    <p>Explorer Boost, Ultimate Power Plan, GPU Shader Cache Clean සහ Deep Registry Tweaks අඩංගු ප්‍රබලම Series එක!</p>
+                    <span class="price-tag" style="color: #ff4500;">මිල: LKR 750/= සිට LKR 1000/= දක්වා</span>
+                    <p>Explorer Boost, Ultimate Power Plan, GPU Shader Cache Clean සහ Deep Registry Tweaks අඩංගု ප්‍රබලම Series එක!</p>
                     <a href="pro.html" class="btn btn-pro" target="_blank">View & Buy Pro Series</a>
                 </div>
             </div>
 
-            <!-- MOBILE TAB -->
             <div id="mobile-tab" class="tab-content">
-                <p style="padding: 20px 0; text-align: center;">Mobile Packs සහ Gaming Guides ලබාගැනීමට කරුණාකර අපගේ WhatsApp අංකය අමතන්න.</p>
+                <div class="pack-card">
+                    <h3>1. MOBILE BASIC PACK (v1.0)</h3>
+                    <span class="price-tag" style="color: #2ea043;">මිල: 100%ක් නොමිලේ! (FREE)</span>
+                    <p>Background Apps Limit කර RAM එක නිදහස් කරන සහ ජංගම දුරකථනයේ කුණු ෆයිල්ස් (System Junk) ඉවත් කර දෙන මූලික පැකේජය.</p>
+                    <a href="m basic.html" class="btn btn-free" target="_blank">Download Mobile Basic Pack</a>
+                </div>
+
+                <div class="pack-card">
+                    <h3>2. MOBILE NORMAL PACK (v1.0)</h3>
+                    <span class="price-tag" style="color: #58a6ff;">මිල: LKR 50/=</span>
+                    <p>Touch Response (ප්‍රතිචාර දැක්වීමේ වේගය) වැඩි කරන සහ දෛනික භාවිතයේදී සිදුවන සුළු ලැග් (Lag) වීම් වළක්වන පැකේජය.</p>
+                    <a href="https://wa.me/94782865641?text=Hi,%20I%20want%20to%20buy%20MOBILE%20NORMAL%20PACK%20v1.0" class="btn btn-whatsapp" target="_blank">Buy via WhatsApp</a>
+                </div>
+
+                <div class="pack-card">
+                    <h3>3. MOBILE ULTIMATE PRO (v1.0)</h3>
+                    <span class="price-tag" style="color: #ff4500;">මිල: LKR 100/=</span>
+                    <p>FPS සීමාවන් ඉවත් කර (Unlock FPS), Hardware උපරිම ධාරිතාවයෙන් ක්‍රියා කරවන Gaming සඳහාම විශේෂයෙන් සකසන ලද ප්‍රබලම Mobile පැකේජය.</p>
+                    <a href="https://wa.me/94782865641?text=Hi,%20I%20want%20to%20buy%20MOBILE%20ULTIMATE%20PRO%20v1.0" class="btn btn-whatsapp" target="_blank">Buy via WhatsApp</a>
+                </div>
             </div>
         </div>
 
-        <!-- DOWNLOAD & HELP SECTION -->
         <div id="buy-section" class="section">
             <h2>බාගත කිරීම් සහ සහාය (Download and Help via WhatsApp)</h2>
             <p style="margin-bottom: 15px;">ඔයාට අවශ්‍ය Paid පැකේජය සඳහා මුදල් <strong style="color: #ff4500;">077 627 3132</strong> අංකයට eZ Cash කිරීමෙන් පසු ලැබෙන රිසිට්පත පහත බටන් එක හරහා අප වෙත WhatsApp කරන්න.</p>

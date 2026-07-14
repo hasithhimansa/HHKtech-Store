@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <!-- ටැබ් එකට ඉමේජ් එකක් එකතු කිරීම -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOBILE BASIC PACK | HHKTECH STORE</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #080c10;
+            color: #c9d1d9;
+            text-align: center;
+            padding: 40px 15px;
+            line-height: 1.6;
+        }
+
+        @keyframes subFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #0d1117;
+            border: 1px solid #21262d;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            text-align: left;
+            animation: subFadeIn 0.8s ease-out;
+        }
+
+        h1 {
+            color: #2ea043;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .version {
+            font-size: 0.9rem;
+            color: #8b949e;
+            text-align: center;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: #c9d1d9;
+        }
+
+        .features-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .features-list li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: #8b949e;
+        }
+
+        /* Countdown Area */
+        .download-box {
+            background-color: #161b22;
+            border: 1px solid #21262d;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .timer-text {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff4500;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #238636;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            pointer-events: none; /* Disabled initially */
+            opacity: 0.5;
+        }
+
+        .btn.active {
+            pointer-events: auto;
+            opacity: 1;
+            background-color: #2ea043;
+        }
+
+        .btn.active:hover {
+            background-color: #238636;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(46, 160, 67, 0.4);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #8b949e;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .back-link:hover { color: #ffffff; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>MOBILE BASIC PACK (v1.0)</h1>
+        <div class="version">HHKTECH Official Free Edition for Mobile</div>
+        
+        <p>මෙය ජංගම දුරකථන වේගවත් කිරීම සඳහා නිපදවා ඇති සම්පූර්ණයෙන්ම නොමිලේ ලැබෙන මූලික පැකේජයකි.</p>
+        
+        <ul class="features-list">
+            <li>පසුබිමේ ක්‍රියාත්මක වන අනවශ්‍ය ඇප්ස් සීමා කර RAM ධාරිතාවය නිදහස් කිරීම.</li>
+            <li>දුරකථනයේ තැන්පත් වී ඇති අනවශ්‍ය කුණු ෆයිල්ස් පිරිසිදු කිරීම.</li>
+            <li>ගේම් සෙල්ලම් කරන විට ලැබෙන සුමට බව වැඩි දියුණු කිරීම.</li>
+        </ul>
+
+        <div class="download-box">
+            <div id="timer-status" class="timer-text">කරුණාකර තත්පර 10ක් රැඳී සිටින්න...</div>
+            <span id="countdown" class="countdown-number">10</span>
+            
+            <a href="https://drive.google.com/file/d/1JT7qH1aKizAijtWLGmqSAPLG9alXhS4W/view?usp=sharing" id="download-btn" class="btn" target="_blank">Download Now</a>
+        </div>
+
+        <a href="index.html" class="back-link">Back to Store</a>
+    </div>
+
+    <script>
+        let timeLeft = 10;
+        const countdownElement = document.getElementById('countdown');
+        const downloadBtn = document.getElementById('download-btn');
+        const timerStatus = document.getElementById('timer-status');
+
+        const timer = setInterval(() => {
+            timeLeft--;
+            countdownElement.textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                countdownElement.style.display = 'none';
+                timerStatus.innerHTML = 'ඔබේ ගොනුව දැන් බාගත කර ගැනීමට සූදානම්!';
+                timerStatus.style.color = '#2ea043';
+                downloadBtn.classList.add('active');
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
